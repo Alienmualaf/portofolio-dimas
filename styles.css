@@ -31,6 +31,13 @@
     --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  html, body {
+    width: 100%;
+    max-width: 100%; /* Pastikan tidak lebih dari 100% */
+    overflow-x: hidden !important; /* Paksa potong scroll samping */
+    position: relative;
+  }
+  
   html {
     scroll-behavior: smooth;
   }
@@ -194,6 +201,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
     padding: 8rem 6% 4rem;
     background: var(--gradient-bg);
   }
@@ -201,6 +209,8 @@
   .hero-background {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
   }
   
@@ -1157,20 +1167,28 @@
   
   .nav-links {
     position: fixed;
-    right: -100%;
+    right: 0;
     top: 80px;
-    flex-direction: column;
+    height: calc(100vh - 80px);
+    width: 100%; /* Atau max-width: 300px jika ingin lebih kecil */
+    max-width: 300px; 
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    width: 100%;
-    padding: 3rem 0;
+    padding: 3rem 2rem;
+    flex-direction: column;
     gap: 2rem;
-    transition: var(--transition);
-    box-shadow: var(--shadow-lg);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    
+    /* UPDATE PENTING DISINI */
+    transform: translateX(100%);
+    visibility: hidden; /* Sembunyikan total agar tidak bikin lebar */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+    /* --------------------- */
   }
-  
+
   .nav-links.active {
-    right: 0;
+    transform: translateX(0%);
+    visibility: visible; /* Munculkan saat aktif */
   }
   
   .hero {
@@ -1223,7 +1241,11 @@
 
 @media (max-width: 480px) {
   .hero-name {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Turunkan dari 3rem/5rem agar muat */
+    word-wrap: break-word; /* Jaga-jaga kalau nama kepanjangan */
+  }
+  .hero-stats {
+    gap: 1.5rem; /* Rapatkan jarak antar angka statistik */
   }
   
   .section-title {
