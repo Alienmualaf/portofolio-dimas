@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dimas Satrio Parikesit - Creative Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cursor Custom -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <span class="logo-icon">DS</span>
+        <span class="logo-text">Portfolio</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-text="Home">Home</a></li>
+        <li><a href="#about" data-text="About">About</a></li>
+        <li><a href="#education" data-text="Education">Education</a></li>
+        <li><a href="#experience" data-text="Experience">Experience</a></li>
+        <li><a href="#contact" data-text="Contact">Contact</a></li>
+      </ul>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-code"></i>
+        <span>Available for Opportunities</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-greeting">Hello, I'm</span>
+        <span class="hero-name">Dimas Satrio</span>
+        <span class="hero-subtitle">Creative Developer & UI/UX Enthusiast</span>
+      </h1>
+      <p class="hero-description">
+        Mahasiswa Teknik Informatika yang passionate dalam menciptakan digital experiences 
+        yang memorable dan impactful melalui clean code dan beautiful design.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="3.65">0</span>
+          <span class="stat-label">GPA</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-label">Organizations</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="https://drive.google.com/file/d/1at9EQ16LjZSkxN8urYMkvIbkwYZawQYM/view?usp=sharing" class="btn btn-primary">
+          <span>Download CV</span>
+          <i class="fas fa-download"></i>
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          <span>Explore More</span>
+          <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Scroll Down</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section scroll-animate">
+    <div class="section-header">
+      <span class="section-tag">Get to Know</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-image" data-tilt>
+        <div class="image-wrapper">
+          <img src="/assets/images/heroimg.jpg" alt="Dimas Satrio">
+          <div class="image-overlay"></div>
+        </div>
+        <div class="experience-badge">
+          <span class="badge-number">3+</span>
+          <span class="badge-text">Years<br>Experience</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>Mahasiswa Teknik Informatika Universitas Pancasila</h3>
+        <p>Saya adalah mahasiswa semester 6 dengan IPK 3.65 yang memiliki passion dalam software development dan UI/UX design. Saya percaya bahwa teknologi yang baik harus tidak hanya powerful, tapi juga beautiful dan user-friendly.</p>
+        <p>Melalui berbagai project dan organisasi, saya terus mengasah kemampuan teknis dan soft skills untuk menjadi developer yang well-rounded.</p>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><i class="fas fa-code"></i> Programming</h4>
+            <div class="skill-items">
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Golang</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Python</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-palette"></i> Design</h4>
+            <div class="skill-items">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">UI/UX</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">Wireframing</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-laptop-code"></i> Web Dev</h4>
+            <div class="skill-items">
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education-section scroll-animate">
+    <div class="section-header">
+      <span class="section-tag">Academic Journey</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="timeline-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="timeline-info">
+              <span class="timeline-date">2022 - Present</span>
+              <h3>Universitas Pancasila</h3>
+              <h4>Teknik Informatika</h4>
+              <p class="gpa"><i class="fas fa-star"></i> IPK: 3.65</p>
+              <div class="timeline-tags">
+                <span>Software Engineering</span>
+                <span>UI/UX Design</span>
+                <span>Data Structures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="timeline-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <div class="timeline-info">
+              <span class="timeline-date">2019 - 2022</span>
+              <h3>SMA Mardiyuana</h3>
+              <h4>Jurusan IPS</h4>
+              <p><i class="fas fa-music"></i> Anggota Tim Paduan Suara Sekolah</p>
+              <div class="timeline-tags">
+                <span>Leadership</span>
+                <span>Team Work</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience-section scroll-animate">
+    <div class="section-header">
+      <span class="section-tag">What I've Done</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    
+    <!-- Tab Navigation -->
+    <div class="experience-tabs">
+      <button class="tab-btn active" data-tab="academic">
+        <i class="fas fa-graduation-cap"></i>
+        Academic
+      </button>
+      <button class="tab-btn" data-tab="nonacademic">
+        <i class="fas fa-users"></i>
+        Organization
+      </button>
+    </div>
+
+    <!-- Academic Content -->
+    <div class="tab-content active" id="academic">
+      <div class="experience-grid">
+        <div class="exp-card" data-category="academic">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <span class="exp-type">Teaching Assistant</span>
+          </div>
+          <h3>Asisten Praktikum Pemrograman Berbasis Web</h3>
+          <p>Membimbing mahasiswa dalam memahami konsep web development, melakukan code review, dan memberikan feedback konstruktif untuk meningkatkan kualitas code mereka.</p>
+          <div class="exp-tags">
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+            <span>Mentoring</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="academic">
+            <div class="exp-card-header">
+              <div class="exp-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <span class="exp-type">Teaching Assistant</span>
+            </div>
+            <h3>Asisten Praktikum Algoritma Struktur Data</h3>
+            <p>Membantu mahasiswa lain dalam memahami konsep pemrograman C++ dan teknik debugging serta Bertanggung jawab untuk memeriksa dan memberikan umpan balik pada tugas-tugas praktikum. </p>
+            <div class="exp-tags">
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Mentoring</span>
+            </div>
+          </div>
+
+        <div class="exp-card" data-category="academic">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <span class="exp-type">Teaching Assistant</span>
+          </div>
+          <h3>Asisten Praktikum Desain Web</h3>
+          <p>Mengajarkan prinsip-prinsip UI/UX design, membantu evaluasi proyek desain, dan membimbing mahasiswa dalam menggunakan tools seperti Figma.</p>
+          <div class="exp-tags">
+            <span>UI/UX</span>
+            <span>Figma</span>
+            <span>Design Thinking</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="academic">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <span class="exp-type">Internship</span>
+          </div>
+          <h3>UI/UX Designer - PT Menara Indonesia</h3>
+          <p>Merancang user interface untuk aplikasi mobile dan web, melakukan user research, membuat wireframe dan prototype, serta berkolaborasi dengan developer.</p>
+          <div class="exp-tags">
+            <span>User Research</span>
+            <span>Wireframing</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="academic">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <span class="exp-type">Project</span>
+          </div>
+          <h3>Perancangan Bisnis Digital Brownis</h3>
+          <p>Mengembangkan website e-commerce dan strategi digital marketing untuk bisnis brownis, termasuk perencanaan konten dan optimasi user experience.</p>
+          <div class="exp-tags">
+            <span>E-Commerce</span>
+            <span>Marketing</span>
+            <span>Full Stack</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="academic">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <span class="exp-type">Project</span>
+          </div>
+          <h3>Desain Platform Upay</h3>
+          <p>Mendesain user interface untuk platform payment Upay, melakukan user testing, dan membuat interactive prototype untuk presentasi stakeholder.</p>
+          <div class="exp-tags">
+            <span>Mobile Design</span>
+            <span>User Testing</span>
+            <span>Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-Academic Content -->
+    <div class="tab-content" id="nonacademic">
+      <div class="experience-grid">
+        <div class="exp-card" data-category="organization">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-music"></i>
+            </div>
+            <span class="exp-type">Music Division</span>
+          </div>
+          <h3>Anggota Divisi Latihan PSUP</h3>
+          <p>Mengatur partitur musik, membantu pelatih dalam koordinasi latihan paduan suara, dan bertanggung jawab atas persiapan materi latihan serta koordinasi antar anggota.</p>
+          <div class="exp-tags">
+            <span>Music</span>
+            <span>Coordination</span>
+            <span>Leadership</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="organization">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <span class="exp-type">Management</span>
+          </div>
+          <h3>Biro Rumah Tangga SAKKA</h3>
+          <p>Mengelola logistik dan kebersihan organisasi kemahasiswaan, mengkoordinasikan acara-acara besar, dan menjaga kelancaran operasional harian organisasi.</p>
+          <div class="exp-tags">
+            <span>Logistics</span>
+            <span>Event Management</span>
+            <span>Operations</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="organization">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <span class="exp-type">Performance</span>
+          </div>
+          <h3>Penyanyi & Panitia Konser Baswara</h3>
+          <p>Tampil sebagai penyanyi paduan suara dan mengelola bagian logistik untuk kelancaran konser Baswara, memastikan semua aspek teknis berjalan dengan baik.</p>
+          <div class="exp-tags">
+            <span>Performance</span>
+            <span>Logistics</span>
+            <span>Teamwork</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="organization">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-guitar"></i>
+            </div>
+            <span class="exp-type">Technical & Performance</span>
+          </div>
+          <h3>Tim Teknis & Penyanyi Konser Reminiscentia</h3>
+          <p>Berperan ganda sebagai penyanyi dan tim teknis, mengelola sound system dan lighting, serta memastikan kualitas audio yang optimal untuk konser.</p>
+          <div class="exp-tags">
+            <span>Sound System</span>
+            <span>Technical</span>
+            <span>Performance</span>
+          </div>
+        </div>
+
+        <div class="exp-card" data-category="organization">
+          <div class="exp-card-header">
+            <div class="exp-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <span class="exp-type">Supervisor</span>
+          </div>
+          <h3>Badan Pengawas PADUS Universitas Pancasila</h3>
+          <p>Mengawasi dan mengevaluasi kegiatan organisasi PADUS, memastikan kegiatan berjalan sesuai AD/ART, dan memberikan rekomendasi untuk perbaikan organisasi.</p>
+          <div class="exp-tags">
+            <span>Supervision</span>
+            <span>Evaluation</span>
+            <span>Governance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section scroll-animate">
+    <div class="contact-background">
+      <div class="contact-shape shape-1"></div>
+      <div class="contact-shape shape-2"></div>
+    </div>
+    <div class="contact-content">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-description">
+          Punya project menarik atau just want to say hi? 
+          Feel free to reach out. I'm always open to discussing new opportunities!
+        </p>
+      </div>
+      
+      <div class="contact-info">
+        <a href="mailto:dimassp1008@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Email</h4>
+            <p>dimassp1008@gmail.com</p>
+          </div>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/" class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-details">
+            <h4>LinkedIn</h4>
+            <p>Dimas Satrio Parikesit</p>
+          </div>
+        </a>
+        
+        <a href="https://www.instagram.com/dimsstr._/" class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Instagram</h4>
+            <p>@dimsstr._</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">DS</span>
+            <span class="logo-text">Portfolio</span>
+          </div>
+          <p>Creating digital experiences that matter.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/">LinkedIn</a>
+            <a href="https://www.instagram.com/dimsstr._/">Instagram</a>
+            <a href="mailto:dimassp1008@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dimas Satrio Parikesit. Crafted with <i class="fas fa-heart"></i> and coffee.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
