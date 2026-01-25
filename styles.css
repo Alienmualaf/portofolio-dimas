@@ -1398,6 +1398,45 @@ footer {
   transform: translateY(0);
 }
 
+.phone-scroll {
+  display: none;
+}
+
+/* Style untuk Icon HP */
+.phone-scroll {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--text-color, #fff); /* Mengikuti warna teks tema */
+  border-radius: 8px; /* Sudut agak kotak seperti HP */
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* Style untuk jempol/animasi scroll */
+.phone-scroll .thumb {
+  width: 4px;
+  height: 4px;
+  background: var(--text-color, #fff);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px; /* Posisi awal */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: phoneScroll 1.5s infinite;
+}
+
+/* Animasi Scroll pada HP */
+@keyframes phoneScroll {
+  0% {
+      opacity: 1;
+      top: 8px;
+  }
+  100% {
+      opacity: 0;
+      top: 24px; /* Gerak ke bawah seolah-olah jari swipe */
+  }
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .hero-name {
@@ -1444,6 +1483,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+  
   nav {
     padding: 1rem 5%;
   }
@@ -1553,6 +1593,18 @@ footer {
     left: 50%;
     transform: translateX(-50%);
   }
+
+  
+  .mouse {
+    display: none;
+}
+
+/* Tampilkan HP */
+.phone-scroll {
+    display: block;
+    margin: 0 auto 10px auto; /* Tengah secara horizontal */
+}
+  
 }
 
 @media (max-width: 480px) {
