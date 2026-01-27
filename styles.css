@@ -8,6 +8,7 @@
 :root {
   --primary: #003366;
   --secondary: #FFD700;
+  --yellow: #FFBE00;
   --accent: #0A5C8C;
   --white: #FFFFFF;
   --black: #0F0F0F;
@@ -499,7 +500,7 @@ section {
 
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .section-tag {
@@ -787,7 +788,7 @@ section {
 
 /* ==================== EXPERIENCE SECTION ==================== */
 .experience-tabs {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .tabs-hint {
@@ -796,21 +797,23 @@ section {
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem;
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(0, 51, 102, 0.03);
   border-radius: 12px;
-  margin-bottom: 1.5rem;
-  animation: pulse 2s ease-in-out infinite;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(0, 51, 102, 0.08);
 }
 
 .tabs-hint i {
   color: var(--primary);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  opacity: 0.7;
 }
 
 .tabs-hint span {
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.95rem;
+  color: var(--gray-600);
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .tabs-buttons {
@@ -1108,12 +1111,15 @@ footer {
   line-height: 1.8;
 }
 
+footer .logo-text {
+  color: var(--white);  /* <--- Kuning (FFD700) */
+}
+
 .footer-links {
   display: flex;
   gap: 4rem;
 }
 
-.footer-column h4
 .footer-column h4 {
   color: var(--white);
   margin-bottom: 1.5rem;
@@ -1406,8 +1412,8 @@ footer {
 .phone-scroll {
   width: 24px;
   height: 40px;
-  border: 2px solid var(--text-color, #fff); /* Mengikuti warna teks tema */
-  border-radius: 8px; /* Sudut agak kotak seperti HP */
+  border: 2px solid var(--text-color, #fff);
+  border-radius: 8px;
   position: relative;
   margin-bottom: 0.5rem;
 }
@@ -1419,7 +1425,7 @@ footer {
   background: var(--text-color, #fff);
   border-radius: 50%;
   position: absolute;
-  top: 8px; /* Posisi awal */
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
   animation: phoneScroll 1.5s infinite;
@@ -1433,7 +1439,7 @@ footer {
   }
   100% {
       opacity: 0;
-      top: 24px; /* Gerak ke bawah seolah-olah jari swipe */
+      top: 24px;
   }
 }
 
@@ -1602,7 +1608,7 @@ footer {
 /* Tampilkan HP */
 .phone-scroll {
     display: block;
-    margin: 0 auto 10px auto; /* Tengah secara horizontal */
+    margin: 0 auto 10px auto;
 }
   
 }
