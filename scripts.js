@@ -208,6 +208,20 @@ const modalData = {
       }
     ],
     skills: ['Organizational Oversight', 'Strategic Planning', 'Compliance Management', 'Report Writing', 'Critical Thinking', 'Governance']
+  },
+  'nff': {
+    icon: 'fa-trophy',
+    type: 'Competition',
+    title: 'National Folklore Festival 10th',
+    description: 'Berpartisipasi dalam kompetisi paduan suara tingkat nasional National Folklore Festival (NFF) ke-10 yang diselenggarakan oleh FEB Universitas Indonesia. Bersama tim Paduan Suara Universitas Pancasila (PSUP), kami membawakan penampilan vokal dan koreografi folklore terbaik hingga berhasil bersaing dengan berbagai universitas ternama dan meraih penghargaan bergengsi Gold Medal.',
+    achievements: [
+      {
+        title: 'Gold Medalist',
+        description: 'Meraih penghargaan tertinggi Gold Medal dalam ajang paduan suara mahasiswa nasional National Folklore Festival ke-10.',
+        image: '/assets/images/NFF.jpeg'
+      }
+    ],
+    skills: ['Vocal Performance', 'Choral Singing', 'Folklore Performance', 'Teamwork', 'Stage Presence', 'Discipline']
   }
 };
 
