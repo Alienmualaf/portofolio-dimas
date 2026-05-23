@@ -433,11 +433,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // === LAYOUT MAGANG (Default) ===
             html += `
                 <div class="modal-description">
-                    <h3 style="color: #003366;">Deskripsi</h3>
-                    <p style="color: #333;">${data.description}</p>
+                    <h3 style="color: var(--primary);">Deskripsi</h3>
+                    <p style="color: var(--text-secondary);">${data.description}</p>
                 </div>
                 <div class="modal-achievements">
-                    <h3 style="color: #003366;">Pencapaian & Hasil Kerja</h3>
+                    <h3 style="color: var(--primary);">Pencapaian & Hasil Kerja</h3>
                     <div class="achievement-grid">
             `;
             
@@ -446,8 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     html += `
                         <div class="achievement-item">
                             <div class="achievement-number">${index + 1}</div>
-                            <h4>${achievement.title}</h4>
-                            <p>${achievement.description}</p>
+                            <h4 style="color: var(--text-primary);">${achievement.title}</h4>
+                            <p style="color: var(--text-secondary);">${achievement.description}</p>
                             ${achievement.image ? `
                             <div class="achievement-image">
                                 <img src="${achievement.image}" alt="${achievement.title}">
@@ -482,18 +482,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
 
-            // 2. Kolom Deskripsi (Warna Header #003366, Warna Teks #333)
+            // 2. Kolom Deskripsi (Warna Header var(--primary), Warna Teks var(--text-secondary))
             html += `
                 <div style="flex: 1.5; min-width: 280px;">
-                    <h3 style="margin-top: 0; color: #003366; font-size: 1.4rem; margin-bottom: 1rem;">Deskripsi</h3>
-                    <p style="line-height: 1.6; color: #333; font-size: 1rem;">${data.description}</p>
+                    <h3 style="margin-top: 0; color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem;">Deskripsi</h3>
+                    <p style="line-height: 1.6; color: var(--text-secondary); font-size: 1rem;">${data.description}</p>
                 </div>
             </div>`; 
 
-            // 3. Achievements (Header #003366)
+            // 3. Achievements (Header var(--primary))
             html += `
                 <div class="modal-achievements">
-                    <h3 style="color: #003366;">Pencapaian</h3>
+                    <h3 style="color: var(--primary);">Pencapaian</h3>
                     <div class="achievement-grid">
             `;
             
@@ -502,8 +502,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     html += `
                         <div class="achievement-item">
                             <div class="achievement-number">${index + 1}</div>
-                            <h4>${achievement.title}</h4>
-                            <p>${achievement.description}</p>
+                            <h4 style="color: var(--text-primary);">${achievement.title}</h4>
+                            <p style="color: var(--text-secondary);">${achievement.description}</p>
                         </div>
                     `;
                 });
@@ -511,10 +511,10 @@ document.addEventListener('DOMContentLoaded', () => {
             html += `</div></div>`;
         }
 
-        // --- Skills (Header #003366) ---
+        // --- Skills (Header var(--primary)) ---
         html += `
             <div class="modal-skills">
-                <h3 style="color: #003366;">Teknologi & Skills</h3>
+                <h3 style="color: var(--primary);">Teknologi & Skills</h3>
                 <div class="modal-tags">
                     ${data.skills.map(skill => `<span>${skill}</span>`).join('')}
                 </div>
