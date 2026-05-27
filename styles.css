@@ -1813,7 +1813,11 @@ footer {
   }
 
   .desktop-icons {
-    margin-top: 160px; /* Adjust margin to clear stacked header components */
+    display: none !important;
+  }
+
+  .desktop-workspace {
+    margin-top: 160px !important;
   }
 
   .explorer-sidebar {
@@ -1860,19 +1864,8 @@ footer {
 
 /* Extra Small Screens / Smart Phones */
 @media (max-width: 480px) {
-  .desktop-icons {
-    margin-top: 175px; /* Clear wrapped Netscape header completely */
-    gap: 8px;
-  }
-  
-  .desktop-icon {
-    font-size: 10px;
-  }
-  
-  .desktop-icon .icon-img-box {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  .desktop-workspace {
+    margin-top: 185px !important;
   }
 
   .win95-title-bar {
