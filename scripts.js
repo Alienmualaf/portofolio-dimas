@@ -380,8 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tiltElement.style.transition = 'transform 0.1s ease';
     }
 
-    /* ==================== 7. ACTIVE LINK ON SCROLL ==================== */
+    /* ==================== 7. ACTIVE LINK ON SCROLL & RETRO UPDATES ==================== */
     const sections = document.querySelectorAll('section');
+    const addressBar = document.getElementById('addressBar');
+    const taskbarItems = document.querySelectorAll('.taskbar-item');
     
     window.addEventListener('scroll', () => {
         let current = '';
@@ -390,18 +392,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinksItems.forEach(li => {
             li.classList.remove('active');
-            li.classList.remove('active');
             if (li.getAttribute('href').includes(current)) {
                 li.classList.add('active'); 
             }
         });
+
+        if (current) {
+            // Update Netscape Location Address Bar
+            if (addressBar) {
+                addressBar.value = `http://dimas-satrio.id/#${current}`;
+            }
+            // Update Active Taskbar Item
+            taskbarItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
 
     /* ==================== 8. MODAL FUNCTIONALITY (FIXED COLOR & LAYOUT) ==================== */
@@ -419,11 +434,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Header ---
         let html = `
             <div class="modal-header">
-                <div class="modal-icon">
+                <div class="modal-icon win95-box-inset">
                     <i class="fas ${data.icon}"></i>
                 </div>
                 <div>
-                    <span class="modal-type">${data.type}</span>
+                    <span class="modal-type win95-box-inset">${data.type}</span>
                     <h2 class="modal-title">${data.title}</h2>
                 </div>
             </div>`;
@@ -449,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4 style="color: var(--text-primary);">${achievement.title}</h4>
                             <p style="color: var(--text-secondary);">${achievement.description}</p>
                             ${achievement.image ? `
-                            <div class="achievement-image">
+                            <div class="achievement-image win95-box-inset">
                                 <img src="${achievement.image}" alt="${achievement.title}">
                             </div>` : ''}
                         </div>
@@ -469,13 +484,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Flex Container
-            html += `<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">`;
+            html += `<div class="modal-flex-container">`;
 
             // 1. Kolom Gambar
             if (firstImage) {
                 html += `
-                    <div style="flex: 1; min-width: 280px;">
-                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%;">
+                    <div class="modal-col-left">
+                        <div class="win95-box-inset" style="overflow: hidden; width: 100%;">
                             <img src="${firstImage}" style="width: 100%; height: auto; display: block; object-fit: cover;" alt="${data.title}">
                         </div>
                     </div>
@@ -484,9 +499,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. Kolom Deskripsi (Warna Header var(--primary), Warna Teks var(--text-secondary))
             html += `
-                <div style="flex: 1.5; min-width: 280px;">
+                <div class="modal-col-right">
                     <h3 style="margin-top: 0; color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem;">Deskripsi</h3>
-                    <p style="line-height: 1.6; color: var(--text-secondary); font-size: 1rem;">${data.description}</p>
+                    <p style="line-height: 1.6; color: var(--text-secondary); font-size: 1rem; background: white; padding: 10px; border: 1.5px solid var(--border-shadow)">${data.description}</p>
                 </div>
             </div>`; 
 
@@ -513,10 +528,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Skills (Header var(--primary)) ---
         html += `
-            <div class="modal-skills">
-                <h3 style="color: var(--primary);">Teknologi & Skills</h3>
+            <div class="modal-skills win95-box-inset">
+                <h3 style="color: var(--primary); margin-bottom: 8px;">Teknologi & Skills</h3>
                 <div class="modal-tags">
-                    ${data.skills.map(skill => `<span>${skill}</span>`).join('')}
+                    ${data.skills.map(skill => `<span class="win95-box-raised">${skill}</span>`).join('')}
                 </div>
             </div>
         `;
@@ -558,4 +573,186 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    /* ==================== 9. RETRO WINDOWS 95 INTERACTIONS ==================== */
+    // Real-time System Tray Clock
+    function updateClock() {
+        const clockEl = document.getElementById('trayClock');
+        if (clockEl) {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 should be 12
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            clockEl.innerText = `${hours}:${minutes} ${ampm}`;
+        }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Start Menu Toggle
+    const startBtn = document.getElementById('startBtn');
+    const startMenu = document.getElementById('startMenu');
+    
+    if (startBtn && startMenu) {
+        startBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startBtn.classList.toggle('active');
+            startMenu.classList.toggle('active');
+        });
+
+        // Close start menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!startMenu.contains(e.target) && e.target !== startBtn) {
+                startBtn.classList.remove('active');
+                startMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // Start Menu Item Clicks - Close Menu
+    const startMenuItems = document.querySelectorAll('.start-menu-item');
+    startMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (startBtn && startMenu) {
+                startBtn.classList.remove('active');
+                startMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Shutdown / Safe to Turn Off Portfolio
+    const shutdownBtn = document.getElementById('shutdownBtn');
+    const shutdownOverlay = document.getElementById('shutdownOverlay');
+    const restartBtn = document.getElementById('restartBtn');
+
+    if (shutdownBtn && shutdownOverlay) {
+        shutdownBtn.addEventListener('click', () => {
+            if (startBtn && startMenu) {
+                startBtn.classList.remove('active');
+                startMenu.classList.remove('active');
+            }
+            shutdownOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (restartBtn && shutdownOverlay) {
+        restartBtn.addEventListener('click', () => {
+            shutdownOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Winamp player play/pause simulation
+    const winampPlayBtn = document.querySelector('.winamp-btn[title="Play"]');
+    const winampPauseBtn = document.querySelector('.winamp-btn[title="Pause"]');
+    const winampStopBtn = document.querySelector('.winamp-btn[title="Stop"]');
+    const visBars = document.querySelectorAll('.vis-bar');
+
+    if (winampPlayBtn && winampPauseBtn && winampStopBtn) {
+        winampPauseBtn.addEventListener('click', () => {
+            winampPlayBtn.classList.remove('active');
+            winampPauseBtn.classList.add('active');
+            winampStopBtn.classList.remove('active');
+            visBars.forEach(bar => bar.style.animationPlayState = 'paused');
+        });
+
+        winampPlayBtn.addEventListener('click', () => {
+            winampPlayBtn.classList.add('active');
+            winampPauseBtn.classList.remove('active');
+            winampStopBtn.classList.remove('active');
+            visBars.forEach(bar => {
+                bar.style.animationPlayState = 'running';
+                bar.style.display = 'block';
+            });
+        });
+
+        winampStopBtn.addEventListener('click', () => {
+            winampPlayBtn.classList.remove('active');
+            winampPauseBtn.classList.remove('active');
+            winampStopBtn.classList.add('active');
+            visBars.forEach(bar => bar.style.display = 'none');
+        });
+    }
+
+    // Guestbook Modal Interactivity
+    const guestbookBtn = document.getElementById('guestbookBtn');
+    const guestbookModal = document.getElementById('guestbookModal');
+    const closeGuestbook = document.getElementById('closeGuestbook');
+    const cancelGuestbook = document.getElementById('cancelGuestbook');
+    const guestbookForm = document.getElementById('guestbookForm');
+    const guestbookEntries = document.getElementById('guestbookEntries');
+
+    // Default entries if local storage is empty
+    const defaultEntries = [
+        { name: "Andi", message: "Keren bgt portofolionya! Nostalgia jaman Windows 95.", date: "2026-05-24" },
+        { name: "Budi", message: "Netscape Navigator navigation is super cool! 🚀", date: "2026-05-26" }
+    ];
+
+    function getEntries() {
+        const stored = localStorage.getItem('win95_guestbook');
+        if (stored) {
+            return JSON.parse(stored);
+        }
+        localStorage.setItem('win95_guestbook', JSON.stringify(defaultEntries));
+        return defaultEntries;
+    }
+
+    function renderEntries() {
+        if (!guestbookEntries) return;
+        const entries = getEntries();
+        guestbookEntries.innerHTML = entries.map(entry => `
+            <div style="background: white; border: 1px solid var(--border-shadow); padding: 6px;">
+                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 2px; border-bottom: 1px dotted #ccc; padding-bottom: 2px;">
+                    <span style="color: var(--win-title-active);">${entry.name}</span>
+                    <span style="color: #666; font-size: 8px;">${entry.date}</span>
+                </div>
+                <div style="word-break: break-all; line-height: 1.4; color: #111;">${entry.message}</div>
+            </div>
+        `).join('');
+    }
+
+    if (guestbookBtn && guestbookModal) {
+        guestbookBtn.addEventListener('click', () => {
+            guestbookModal.classList.add('active');
+            renderEntries();
+        });
+    }
+
+    function closeGbModal() {
+        if (guestbookModal) {
+            guestbookModal.classList.remove('active');
+        }
+    }
+
+    if (closeGuestbook) closeGuestbook.addEventListener('click', closeGbModal);
+    if (cancelGuestbook) cancelGuestbook.addEventListener('click', closeGbModal);
+
+    if (guestbookForm) {
+        guestbookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('gbName');
+            const msgInput = document.getElementById('gbMsg');
+            
+            if (nameInput && msgInput) {
+                const name = nameInput.value.trim();
+                const message = msgInput.value.trim();
+                if (name && message) {
+                    const entries = getEntries();
+                    const today = new Date().toISOString().split('T')[0];
+                    entries.unshift({ name, message, date: today }); // Add to top
+                    localStorage.setItem('win95_guestbook', JSON.stringify(entries));
+                    
+                    nameInput.value = '';
+                    msgInput.value = '';
+                    
+                    renderEntries();
+                    alert('Terima kasih! Pesan Anda telah ditulis di GUESTBK.DAT.');
+                }
+            }
+        });
+    }
 });

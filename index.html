@@ -3,29 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dimas Satrio Parikesit - Creative Portfolio</title>
+  <title>Dimas Satrio Parikesit - Windows 95 Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Cursor Custom -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <!-- Windows 95 Desktop background (handled in CSS) -->
 
-  <!-- Navigation -->
-  <header>
+  <!-- Navigation header styled as Netscape Navigator -->
+  <header class="win95-window">
+    <!-- Blue Window Title Bar -->
+    <div class="win95-title-bar">
+      <div class="win95-title">
+        <i class="fas fa-globe-americas"></i> Netscape Navigator - [Dimas Satrio Parikesit]
+      </div>
+      <div class="win95-window-controls">
+        <button class="win95-ctrl-btn" aria-label="Minimize">_</button>
+        <button class="win95-ctrl-btn" aria-label="Maximize">⧠</button>
+        <button class="win95-ctrl-btn close-btn" onclick="alert('Cannot close main browser window!')">X</button>
+      </div>
+    </div>
+    
+    <!-- Menu Bar -->
+    <div class="win95-menu-bar">
+      <span><u>F</u>ile</span>
+      <span><u>E</u>dit</span>
+      <span><u>V</u>iew</span>
+      <span><u>G</u>o</span>
+      <span><u>B</u>ookmarks</span>
+      <span><u>O</u>ptions</span>
+      <span><u>D</u>irectory</span>
+      <span><u>W</u>indow</span>
+      <span><u>H</u>elp</span>
+    </div>
+    
     <nav>
       <div class="logo">
+        <div class="netscape-logo">N</div>
         <span class="logo-accent">Dimas</span>
         <span class="logo-text">Portofolio</span>
       </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" data-text="Home">Home</a></li>
-        <li><a href="#about" data-text="About">About</a></li>
-        <li><a href="#education" data-text="Education">Education</a></li>
-        <li><a href="#experience" data-text="Experience">Experience</a></li>
-        <li><a href="#contact" data-text="Contact">Contact</a></li>
+      
+      <!-- Toolbar Button Navigation -->
+      <ul class="nav-links win95-toolbar" id="navLinks">
+        <li>
+          <a href="#home" class="win95-tool-btn active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="win95-tool-btn">
+            <i class="fas fa-user-circle"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#education" class="win95-tool-btn">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Education</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experience" class="win95-tool-btn">
+            <i class="fas fa-folder-open"></i>
+            <span>Experience</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="win95-tool-btn">
+            <i class="fas fa-envelope-open-text"></i>
+            <span>Contact</span>
+          </a>
+        </li>
       </ul>
       <div class="burger" id="burger">
         <span></span>
@@ -33,533 +84,935 @@
         <span></span>
       </div>
     </nav>
+    
+    <!-- Address Bar -->
+    <div class="win95-address-bar-row">
+      <span class="location-label">Netsite:</span>
+      <div class="address-input-wrapper win95-box-inset">
+        <input type="text" id="addressBar" value="http://dimas-satrio.id/#home" readonly>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-background">
-      <div class="hero-shape shape-1"></div>
-      <div class="hero-shape shape-2"></div>
-      <div class="hero-shape shape-3"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fas fa-code"></i>
-        <span>Available for Opportunities</span>
-      </div>
-      <h1 class="hero-title">
-        <span class="hero-greeting">Hello, I'm</span>
-        <span class="hero-name">Dimas Satrio</span>
-        <span class="hero-subtitle">Creative Developer & UI/UX Enthusiast</span>
-      </h1>
-      <p class="hero-description">
-        Mahasiswa Teknik Informatika yang passionate dalam menciptakan digital experiences 
-        yang memorable dan impactful melalui clean code dan beautiful design.
-      </p>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number" data-target="3.65">0</span>
-          <span class="stat-label">GPA</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="15">0</span>
-          <span class="stat-label">Projects</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="8">0</span>
-          <span class="stat-label">Organizations</span>
-        </div>
-      </div>
-      <div class="hero-cta">
-        <a href="https://drive.google.com/file/d/1at9EQ16LjZSkxN8urYMkvIbkwYZawQYM/view?usp=sharing" class="btn btn-primary">
-          <span>Download CV</span>
-          <i class="fas fa-download"></i>
-        </a>
-        <a href="#about" class="btn btn-secondary">
-          <span>Explore More</span>
-          <i class="fas fa-arrow-down"></i>
-        </a>
-      </div>
-      <div class="scroll-indicator">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-      
-        <div class="phone-scroll">
-          <div class="thumb"></div>
-        </div>
-      
-        <p>Scroll Down</p>
-      </div>
-    </div>
-  </section>
+  <!-- Desktop Icons (Floating on desktop behind windows) -->
+  <div class="desktop-icons">
+    <a href="#about" class="desktop-icon">
+      <div class="icon-img-box win95-box-raised"><i class="fas fa-desktop"></i></div>
+      <span>My Computer</span>
+    </a>
+    <a href="#education" class="desktop-icon">
+      <div class="icon-img-box win95-box-raised"><i class="fas fa-network-wired"></i></div>
+      <span>Network</span>
+    </a>
+    <a href="#experience" class="desktop-icon">
+      <div class="icon-img-box win95-box-raised"><i class="fas fa-folder"></i></div>
+      <span>Experience</span>
+    </a>
+    <a href="#contact" class="desktop-icon">
+      <div class="icon-img-box win95-box-raised"><i class="fas fa-mail-bulk"></i></div>
+      <span>Inbox</span>
+    </a>
+    <a href="https://drive.google.com/file/d/1at9EQ16LjZSkxN8urYMkvIbkwYZawQYM/view?usp=sharing" target="_blank" class="desktop-icon">
+      <div class="icon-img-box win95-box-raised"><i class="fas fa-file-signature"></i></div>
+      <span>Download_CV.lnk</span>
+    </a>
+  </div>
 
-  <!-- About Section -->
-  <section id="about" class="about-section scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">Get to Know</span>
-      <h2 class="section-title">About Me</h2>
-    </div>
-    <div class="about-content">
-      <div class="about-image" data-tilt>
-        <div class="image-wrapper">
-          <img src="/assets/images/dimas.jpeg" alt="Dimas Satrio">
-          <div class="image-overlay"></div>
+  <!-- Main Scrollable Content -->
+  <main class="desktop-workspace">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="win95-window hero-window">
+        <div class="win95-title-bar">
+          <div class="win95-title"><i class="fas fa-running"></i> dimsstr.exe</div>
+          <div class="win95-window-controls">
+            <button class="win95-ctrl-btn">_</button>
+            <button class="win95-ctrl-btn">⧠</button>
+            <button class="win95-ctrl-btn">X</button>
+          </div>
         </div>
-        <div class="experience-badge">
-          <span class="badge-number">3+</span>
-          <span class="badge-text">Years<br>Experience</span>
+        <div class="win95-menu-bar">
+          <span><u>F</u>ile</span>
+          <span><u>R</u>un</span>
+          <span><u>S</u>ettings</span>
+          <span><u>H</u>elp</span>
         </div>
-      </div>
-      <div class="about-text">
-        <h3>Mahasiswa Teknik Informatika Universitas Pancasila</h3>
-        <p>Saya adalah mahasiswa semester 6 dengan IPK 3.65 yang memiliki passion dalam software development dan UI/UX design. Saya percaya bahwa teknologi yang baik harus tidak hanya powerful, tapi juga beautiful dan user-friendly.</p>
-        <p>Melalui berbagai project dan organisasi, saya terus mengasah kemampuan teknis dan soft skills untuk menjadi developer yang well-rounded.</p>
         
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h4><i class="fas fa-code"></i> Programming</h4>
-            <div class="skill-items">
-              <span class="skill-tag">C++</span>
-              <span class="skill-tag">Golang</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Python</span>
+        <div class="win95-window-body">
+          <div class="hero-content">
+            <div class="hero-badge win95-box-raised">
+              <i class="fas fa-code"></i>
+              <span>Available for Opportunities</span>
             </div>
-          </div>
-          <div class="skill-category">
-            <h4><i class="fas fa-palette"></i> Design</h4>
-            <div class="skill-items">
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">UI/UX</span>
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">Wireframing</span>
+            
+            <h1 class="hero-title">
+              <span class="hero-greeting">Hello, I'm</span>
+              <span class="hero-name">Dimas Satrio</span>
+              <span class="hero-subtitle">Creative Developer & UI/UX Enthusiast</span>
+            </h1>
+            
+            <p class="hero-description">
+              Mahasiswa Teknik Informatika yang passionate dalam menciptakan digital experiences 
+              yang memorable dan impactful melalui clean code dan beautiful design.
+            </p>
+            
+            <!-- System Metrics Stats -->
+            <div class="hero-stats">
+              <div class="stat-item win95-box-inset">
+                <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+                <div class="stat-details">
+                  <span class="stat-number" data-target="3.65">0</span>
+                  <span class="stat-label">GPA.SYS</span>
+                </div>
+              </div>
+              <div class="stat-item win95-box-inset">
+                <div class="stat-icon"><i class="fas fa-save"></i></div>
+                <div class="stat-details">
+                  <span class="stat-number" data-target="15">0</span>
+                  <span class="stat-label">PROJECTS.DLL</span>
+                </div>
+              </div>
+              <div class="stat-item win95-box-inset">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-details">
+                  <span class="stat-number" data-target="8">0</span>
+                  <span class="stat-label">ORG.EXE</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="skill-category">
-            <h4><i class="fas fa-laptop-code"></i> Web Dev</h4>
-            <div class="skill-items">
-              <span class="skill-tag">HTML/CSS</span>
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">MySQL</span>
+            
+            <div class="hero-cta">
+              <a href="https://drive.google.com/file/d/1at9EQ16LjZSkxN8urYMkvIbkwYZawQYM/view?usp=sharing" target="_blank" class="btn btn-primary win95-button">
+                <span>Download CV</span>
+                <i class="fas fa-download"></i>
+              </a>
+              <a href="#about" class="btn btn-secondary win95-button">
+                <span>Explore More</span>
+                <i class="fas fa-arrow-down"></i>
+              </a>
+            </div>
+            
+            <!-- Retro Winamp / MIDI player widget -->
+            <div class="winamp-player win95-box-raised">
+              <div class="winamp-title-bar">
+                <div class="winamp-title"><i class="fas fa-music"></i> Winamp 2.82</div>
+                <div class="winamp-controls">
+                  <span>_</span><span>X</span>
+                </div>
+              </div>
+              <div class="winamp-body">
+                <div class="winamp-display win95-box-inset">
+                  <div class="winamp-track-info">
+                    <marquee scrollamount="2" class="track-title">1. Dimas - Portfolio MIDI.mid (Active)</marquee>
+                    <div class="track-time">02:45</div>
+                  </div>
+                  <div class="winamp-vis">
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                    <div class="vis-bar"></div>
+                  </div>
+                </div>
+                <div class="winamp-buttons">
+                  <button class="winamp-btn" title="Previous"><i class="fas fa-backward"></i></button>
+                  <button class="winamp-btn active" title="Play"><i class="fas fa-play"></i></button>
+                  <button class="winamp-btn" title="Pause"><i class="fas fa-pause"></i></button>
+                  <button class="winamp-btn" title="Stop"><i class="fas fa-stop"></i></button>
+                  <button class="winamp-btn" title="Next"><i class="fas fa-forward"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dotted Construction Banner (Very Retro!) -->
+            <div class="retro-banner win95-box-inset">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23f59e0b' d='M16 2L2 28h28L16 2zm0 6l9.5 17h-19L16 8zm-1 3v6h2v-6h-2zm0 8v2h2v-2h-2z'/%3E%3C/svg%3E" alt="Warning">
+              <span><b>Site Notice:</b> Best viewed in 800x600 resolution with Netscape Navigator 3.0+ and 16-bit color enabled.</span>
+            </div>
+
+            <div class="scroll-indicator">
+              <div class="mouse">
+                <div class="wheel"></div>
+              </div>
+              <p>Scroll Down</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Education Section -->
-  <section id="education" class="education-section scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">Academic Journey</span>
-      <h2 class="section-title">Education</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-card">
-            <div class="timeline-icon">
-              <i class="fas fa-university"></i>
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-animate">
+      <div class="win95-window">
+        <div class="win95-title-bar">
+          <div class="win95-title"><i class="fas fa-file-alt"></i> About_Me.txt - Notepad</div>
+          <div class="win95-window-controls">
+            <button class="win95-ctrl-btn">_</button>
+            <button class="win95-ctrl-btn">⧠</button>
+            <button class="win95-ctrl-btn">X</button>
+          </div>
+        </div>
+        <div class="win95-menu-bar">
+          <span><u>F</u>ile</span>
+          <span><u>E</u>dit</span>
+          <span><u>S</u>earch</span>
+          <span><u>H</u>elp</span>
+        </div>
+        
+        <div class="win95-window-body">
+          <div class="section-header">
+            <span class="section-tag">Get to Know</span>
+            <h2 class="section-title">About Me</h2>
+          </div>
+          
+          <div class="about-content">
+            <div class="about-image" data-tilt>
+              <div class="image-wrapper win95-box-inset">
+                <img src="assets/images/dimas.jpeg" alt="Dimas Satrio">
+                <div class="image-overlay"></div>
+              </div>
+              <div class="experience-badge win95-box-raised">
+                <span class="badge-number">3+</span>
+                <span class="badge-text">Years<br>Experience</span>
+              </div>
             </div>
-            <div class="timeline-info">
-              <span class="timeline-date">2022 - Present</span>
-              <h3>Universitas Pancasila</h3>
-              <h4>Teknik Informatika</h4>
-              <p class="gpa"><i class="fas fa-star"></i> IPK: 3.65</p>
-              <div class="timeline-tags">
-                <span>Software Engineering</span>
-                <span>UI/UX Design</span>
-                <span>Data Structures</span>
+            
+            <div class="about-text">
+              <h3>Mahasiswa Teknik Informatika Universitas Pancasila</h3>
+              <p>Saya adalah mahasiswa semester 6 dengan IPK 3.65 yang memiliki passion dalam software development dan UI/UX design. Saya percaya bahwa teknologi yang baik harus tidak hanya powerful, tapi juga beautiful dan user-friendly.</p>
+              <p>Melalui berbagai project dan organisasi, saya terus mengasah kemampuan teknis dan soft skills untuk menjadi developer yang well-rounded.</p>
+              
+              <div class="skills-grid">
+                <div class="skill-category win95-box-inset">
+                  <h4><i class="fas fa-code"></i> Programming</h4>
+                  <div class="skill-items">
+                    <span class="skill-tag win95-box-raised">C++</span>
+                    <span class="skill-tag win95-box-raised">Golang</span>
+                    <span class="skill-tag win95-box-raised">JavaScript</span>
+                    <span class="skill-tag win95-box-raised">Python</span>
+                  </div>
+                </div>
+                <div class="skill-category win95-box-inset">
+                  <h4><i class="fas fa-palette"></i> Design</h4>
+                  <div class="skill-items">
+                    <span class="skill-tag win95-box-raised">Figma</span>
+                    <span class="skill-tag win95-box-raised">UI/UX</span>
+                    <span class="skill-tag win95-box-raised">Prototyping</span>
+                    <span class="skill-tag win95-box-raised">Wireframing</span>
+                  </div>
+                </div>
+                <div class="skill-category win95-box-inset">
+                  <h4><i class="fas fa-laptop-code"></i> Web Dev</h4>
+                  <div class="skill-items">
+                    <span class="skill-tag win95-box-raised">HTML/CSS</span>
+                    <span class="skill-tag win95-box-raised">React</span>
+                    <span class="skill-tag win95-box-raised">Node.js</span>
+                    <span class="skill-tag win95-box-raised">MySQL</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-card">
-            <div class="timeline-icon">
-              <i class="fas fa-school"></i>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section scroll-animate">
+      <div class="win95-window">
+        <div class="win95-title-bar">
+          <div class="win95-title"><i class="fas fa-university"></i> Device Manager - [Academic Journey]</div>
+          <div class="win95-window-controls">
+            <button class="win95-ctrl-btn">_</button>
+            <button class="win95-ctrl-btn">⧠</button>
+            <button class="win95-ctrl-btn">X</button>
+          </div>
+        </div>
+        <div class="win95-menu-bar">
+          <span><u>A</u>ction</span>
+          <span><u>V</u>iew</span>
+          <span><u>H</u>elp</span>
+        </div>
+        
+        <div class="win95-window-body">
+          <div class="section-header">
+            <span class="section-tag">Academic Journey</span>
+            <h2 class="section-title">Education</h2>
+          </div>
+          
+          <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-card win95-box-raised">
+                  <div class="timeline-icon win95-box-inset">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <span class="timeline-date win95-box-inset">2022 - Present</span>
+                    <h3>Universitas Pancasila</h3>
+                    <h4>Teknik Informatika</h4>
+                    <p class="gpa"><i class="fas fa-star"></i> IPK: 3.65</p>
+                    <div class="timeline-tags">
+                      <span class="win95-box-inset">Software Engineering</span>
+                      <span class="win95-box-inset">UI/UX Design</span>
+                      <span class="win95-box-inset">Data Structures</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="timeline-info">
-              <span class="timeline-date">2019 - 2022</span>
-              <h3>SMA Mardiyuana</h3>
-              <h4>Jurusan IPS</h4>
-              <p><i class="fas fa-music"></i> Anggota Tim Paduan Suara Sekolah</p>
-              <div class="timeline-tags">
-                <span>Leadership</span>
-                <span>Team Work</span>
+            <div class="timeline-item" data-aos="fade-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-card win95-box-raised">
+                  <div class="timeline-icon win95-box-inset">
+                    <i class="fas fa-school"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <span class="timeline-date win95-box-inset">2019 - 2022</span>
+                    <h3>SMA Mardiyuana</h3>
+                    <h4>Jurusan IPS</h4>
+                    <p><i class="fas fa-music"></i> Anggota Tim Paduan Suara Sekolah</p>
+                    <div class="timeline-tags">
+                      <span class="win95-box-inset">Leadership</span>
+                      <span class="win95-box-inset">Team Work</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience-section scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">What I've Done</span>
-      <h2 class="section-title">Experience</h2>
-    </div>
-    
-    <!-- Tab Navigation -->
-    <div class="experience-tabs">
-      <div class="tabs-hint">
-        <i class="fas fa-layer-group"></i>
-        <span>Pengalaman tersedia dalam dua kategori</span>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section scroll-animate">
+      <div class="win95-window">
+        <div class="win95-title-bar">
+          <div class="win95-title"><i class="fas fa-folder-open"></i> Exploring - C:\Dimas\Experience</div>
+          <div class="win95-window-controls">
+            <button class="win95-ctrl-btn">_</button>
+            <button class="win95-ctrl-btn">⧠</button>
+            <button class="win95-ctrl-btn">X</button>
+          </div>
+        </div>
+        <div class="win95-menu-bar">
+          <span><u>F</u>ile</span>
+          <span><u>E</u>dit</span>
+          <span><u>V</u>iew</span>
+          <span><u>G</u>o</span>
+          <span><u>T</u>ools</span>
+          <span><u>H</u>elp</span>
+        </div>
+        
+        <!-- Explorer Address Row -->
+        <div class="explorer-address-bar win95-box-raised">
+          <span class="explorer-addr-label">Address:</span>
+          <div class="explorer-addr-input win95-box-inset">
+            <i class="fas fa-folder"></i> C:\Dimas\Experience
+          </div>
+        </div>
+
+        <div class="win95-window-body explorer-body">
+          <!-- Explorer Left Pane: Folder Tree -->
+          <div class="explorer-sidebar win95-box-inset">
+            <ul class="folder-tree">
+              <li>
+                <i class="fas fa-desktop"></i> Desktop
+                <ul>
+                  <li>
+                    <i class="fas fa-hdd"></i> Local Disk (C:)
+                    <ul>
+                      <li>
+                        <i class="fas fa-folder-open"></i> Dimas
+                        <ul>
+                          <li class="tree-item-active"><i class="fas fa-folder-open"></i> Experience</li>
+                          <li><i class="fas fa-folder"></i> Education</li>
+                          <li><i class="fas fa-folder"></i> About</li>
+                          <li><i class="fas fa-folder"></i> Contact</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Explorer Right Pane: Content -->
+          <div class="explorer-main">
+            <div class="section-header">
+              <span class="section-tag">What I've Done</span>
+              <h2 class="section-title">Experience</h2>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="experience-tabs">
+              <div class="tabs-hint win95-box-inset">
+                <i class="fas fa-layer-group"></i>
+                <span>Kategori File:</span>
+              </div>
+              <div class="tabs-buttons">
+                <button class="tab-btn active win95-button" data-tab="academic">
+                  <i class="fas fa-graduation-cap"></i>
+                  Academic.dll
+                </button>
+                <button class="tab-btn win95-button" data-tab="nonacademic">
+                  <i class="fas fa-users"></i>
+                  Organization.exe
+                </button>
+              </div>
+            </div>
+
+            <!-- Academic Content -->
+            <div class="tab-content active" id="academic">
+              <div class="experience-grid">
+                <div class="exp-card win95-box-raised" data-modal="internship">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Internship</span>
+                  </div>
+                  <h3>UI/UX Designer - PT Menara Indonesia</h3>
+                  <p>Merancang user interface untuk aplikasi mobile dan web, melakukan user research, membuat wireframe dan prototype, serta berkolaborasi dengan developer.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">User Research</span>
+                    <span class="win95-box-inset">Wireframing</span>
+                    <span class="win95-box-inset">Prototyping</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="asprak-web">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Assistant</span>
+                  </div>
+                  <h3>Asisten Praktikum Pemrograman Berbasis Web</h3>
+                  <p>Membimbing mahasiswa dalam memahami konsep web development, melakukan code review, dan memberikan feedback konstruktif untuk meningkatkan kualitas code mereka.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">HTML/CSS</span>
+                    <span class="win95-box-inset">JavaScript</span>
+                    <span class="win95-box-inset">Mentoring</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="asprak-design">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Assistant</span>
+                  </div>
+                  <h3>Asisten Praktikum Desain Web</h3>
+                  <p>Mengajarkan prinsip-prinsip UI/UX design, membantu evaluasi proyek desain, dan membimbing mahasiswa dalam menggunakan tools seperti Figma.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">UI/UX</span>
+                    <span class="win95-box-inset">Figma</span>
+                    <span class="win95-box-inset">Design Thinking</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="asprak-asd">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Assistant</span>
+                  </div>
+                  <h3>Asisten Praktikum Algoritma Struktur Data</h3>
+                  <p>Membantu mahasiswa lain dalam memahami konsep pemrograman C++ dan teknik debugging serta Bertanggung jawab untuk memeriksa dan memberikan umpan balik pada tugas-tugas praktikum.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">C++</span>
+                    <span class="win95-box-inset">Data Structures</span>
+                    <span class="win95-box-inset">Algorithms</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="brownis">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-store"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Project</span>
+                  </div>
+                  <h3>Perancangan Bisnis Digital Brownis</h3>
+                  <p>Mengembangkan website e-commerce dan strategi digital marketing untuk bisnis brownis, termasuk perencanaan konten dan optimasi user experience.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">E-Commerce</span>
+                    <span class="win95-box-inset">Marketing</span>
+                    <span class="win95-box-inset">Full Stack</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="upay">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Project</span>
+                  </div>
+                  <h3>Desain Platform Upay</h3>
+                  <p>Mendesain user interface untuk platform payment Upay, melakukan user testing, dan membuat interactive prototype untuk presentasi stakeholder.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Mobile Design</span>
+                    <span class="win95-box-inset">User Testing</span>
+                    <span class="win95-box-inset">Figma</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Non-Academic Content -->
+            <div class="tab-content" id="nonacademic">
+              <div class="experience-grid">
+                <div class="exp-card win95-box-raised" data-modal="nff">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-trophy"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Competition</span>
+                  </div>
+                  <h3>Gold Medalist - National Folklore Festival 10th</h3>
+                  <p>Berhasil meraih penghargaan Gold Medal dalam kompetisi paduan suara tingkat nasional National Folklore Festival ke-10 bersama PSUP.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Choral Competition</span>
+                    <span class="win95-box-inset">Gold Medal</span>
+                    <span class="win95-box-inset">Performance</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="padus">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Supervisor</span>
+                  </div>
+                  <h3>Badan Pengawas PADUS Universitas Pancasila</h3>
+                  <p>Mengawasi dan mengevaluasi kegiatan organisasi PADUS, memastikan kegiatan berjalan sesuai AD/ART, dan memberikan rekomendasi untuk perbaikan organisasi.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Supervision</span>
+                    <span class="win95-box-inset">Evaluation</span>
+                    <span class="win95-box-inset">Governance</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="psup">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Music</span>
+                  </div>
+                  <h3>Anggota Divisi Latihan PSUP</h3>
+                  <p>Mengatur partitur musik, membantu pelatih dalam koordinasi latihan paduan suara, dan bertanggung jawab atas persiapan materi latihan serta koordinasi antar anggota.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Music</span>
+                    <span class="win95-box-inset">Coordination</span>
+                    <span class="win95-box-inset">Leadership</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="sakka">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-home"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Management</span>
+                  </div>
+                  <h3>Biro Rumah Tangga SAKKA</h3>
+                  <p>Mengelola logistik dan kebersihan organisasi kemahasiswaan, mengkoordinasikan acara-acara besar, dan menjaga kelancaran operasional harian organisasi.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Logistics</span>
+                    <span class="win95-box-inset">Event Management</span>
+                    <span class="win95-box-inset">Operations</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="reminiscentia">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-guitar"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Technical</span>
+                  </div>
+                  <h3>Tim Teknis & Penyanyi Konser Reminiscentia</h3>
+                  <p>Berperan sebagai divisi kepelatihan yang membina penyanyi sekaligus tampil sebagai performer, serta memastikan seluruh proses latihan dan konser berjalan dengan lancar.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Sound System</span>
+                    <span class="win95-box-inset">Technical</span>
+                    <span class="win95-box-inset">Performance</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+
+                <div class="exp-card win95-box-raised" data-modal="baswara">
+                  <div class="exp-card-header">
+                    <div class="exp-icon win95-box-inset">
+                      <i class="fas fa-microphone"></i>
+                    </div>
+                    <span class="exp-type win95-box-inset">Performance</span>
+                  </div>
+                  <h3>Penyanyi & Panitia Konser Baswara</h3>
+                  <p>Tampil sebagai penyanyi paduan suara dan mengelola bagian logistik untuk kelancaran konser Baswara, memastikan semua aspek teknis berjalan dengan baik.</p>
+                  <div class="exp-tags">
+                    <span class="win95-box-inset">Performance</span>
+                    <span class="win95-box-inset">Logistics</span>
+                    <span class="win95-box-inset">Teamwork</span>
+                  </div>
+                  <div class="exp-cta win95-button">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="tabs-buttons">
-        <button class="tab-btn active" data-tab="academic">
-          <i class="fas fa-graduation-cap"></i>
-          Academic
-        </button>
-        <button class="tab-btn" data-tab="nonacademic">
-          <i class="fas fa-users"></i>
-          Organization
-        </button>
-      </div>
-    </div>
+    </section>
 
-    <!-- Academic Content -->
-    <div class="tab-content active" id="academic">
-      <div class="experience-grid">
-
-        <div class="exp-card" data-modal="internship">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <span class="exp-type">Internship</span>
-          </div>
-          <h3>UI/UX Designer - PT Menara Indonesia</h3>
-          <p>Merancang user interface untuk aplikasi mobile dan web, melakukan user research, membuat wireframe dan prototype, serta berkolaborasi dengan developer.</p>
-          <div class="exp-tags">
-            <span>User Research</span>
-            <span>Wireframing</span>
-            <span>Prototyping</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section scroll-animate">
+      <div class="win95-window">
+        <div class="win95-title-bar">
+          <div class="win95-title"><i class="fas fa-envelope"></i> Outlook Express - [Compose Message]</div>
+          <div class="win95-window-controls">
+            <button class="win95-ctrl-btn">_</button>
+            <button class="win95-ctrl-btn">⧠</button>
+            <button class="win95-ctrl-btn">X</button>
           </div>
         </div>
-
-        <div class="exp-card" data-modal="asprak-web">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <span class="exp-type">Teaching Assistant</span>
-          </div>
-          <h3>Asisten Praktikum Pemrograman Berbasis Web</h3>
-          <p>Membimbing mahasiswa dalam memahami konsep web development, melakukan code review, dan memberikan feedback konstruktif untuk meningkatkan kualitas code mereka.</p>
-          <div class="exp-tags">
-            <span>HTML/CSS</span>
-            <span>JavaScript</span>
-            <span>Mentoring</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
+        <div class="win95-menu-bar">
+          <span><u>F</u>ile</span>
+          <span><u>E</u>dit</span>
+          <span><u>V</u>iew</span>
+          <span><u>I</u>nsert</span>
+          <span><u>F</u>ormat</span>
+          <span><u>H</u>elp</span>
         </div>
-
-        <div class="exp-card" data-modal="asprak-design">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-paint-brush"></i>
+        
+        <div class="win95-window-body outlook-body">
+          <div class="outlook-headers win95-box-inset">
+            <div class="outlook-field">
+              <span class="field-label">To:</span>
+              <span class="field-val">dimassp1008@gmail.com</span>
             </div>
-            <span class="exp-type">Teaching Assistant</span>
-          </div>
-          <h3>Asisten Praktikum Desain Web</h3>
-          <p>Mengajarkan prinsip-prinsip UI/UX design, membantu evaluasi proyek desain, dan membimbing mahasiswa dalam menggunakan tools seperti Figma.</p>
-          <div class="exp-tags">
-            <span>UI/UX</span>
-            <span>Figma</span>
-            <span>Design Thinking</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="asprak-asd">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-project-diagram"></i>
+            <div class="outlook-field">
+              <span class="field-label">Cc:</span>
+              <span class="field-val"></span>
             </div>
-            <span class="exp-type">Teaching Assistant</span>
-          </div>
-          <h3>Asisten Praktikum Algoritma Struktur Data</h3>
-          <p>Membantu mahasiswa lain dalam memahami konsep pemrograman C++ dan teknik debugging serta Bertanggung jawab untuk memeriksa dan memberikan umpan balik pada tugas-tugas praktikum.</p>
-          <div class="exp-tags">
-            <span>C++</span>
-            <span>Data Structures</span>
-            <span>Algorithms</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="brownis">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-store"></i>
+            <div class="outlook-field">
+              <span class="field-label">Subject:</span>
+              <span class="field-val highlight-val">Collaborating on a Creative Project</span>
             </div>
-            <span class="exp-type">Project</span>
           </div>
-          <h3>Perancangan Bisnis Digital Brownis</h3>
-          <p>Mengembangkan website e-commerce dan strategi digital marketing untuk bisnis brownis, termasuk perencanaan konten dan optimasi user experience.</p>
-          <div class="exp-tags">
-            <span>E-Commerce</span>
-            <span>Marketing</span>
-            <span>Full Stack</span>
+          
+          <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-description">
+              Punya project menarik atau just want to say hi? 
+              Feel free to reach out. I'm always open to discussing new opportunities!
+            </p>
           </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="upay">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <span class="exp-type">Project</span>
-          </div>
-          <h3>Desain Platform Upay</h3>
-          <p>Mendesain user interface untuk platform payment Upay, melakukan user testing, dan membuat interactive prototype untuk presentasi stakeholder.</p>
-          <div class="exp-tags">
-            <span>Mobile Design</span>
-            <span>User Testing</span>
-            <span>Figma</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
+          
+          <div class="contact-info">
+            <a href="mailto:dimassp1008@gmail.com" class="contact-card win95-box-raised">
+              <div class="contact-icon win95-box-inset">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>dimassp1008@gmail.com</p>
+              </div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/" target="_blank" class="contact-card win95-box-raised">
+              <div class="contact-icon win95-box-inset">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-details">
+                <h4>LinkedIn</h4>
+                <p>Dimas Satrio Parikesit</p>
+              </div>
+            </a>
+            
+            <a href="https://www.instagram.com/dimsstr._/" target="_blank" class="contact-card win95-box-raised">
+              <div class="contact-icon win95-box-inset">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Instagram</h4>
+                <p>@dimsstr._</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <!-- Non-Academic Content -->
-    <div class="tab-content" id="nonacademic">
-      <div class="experience-grid">
-        <div class="exp-card" data-modal="nff">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <span class="exp-type">Competition</span>
-          </div>
-          <h3>Gold Medalist - National Folklore Festival 10th</h3>
-          <p>Berhasil meraih penghargaan Gold Medal dalam kompetisi paduan suara tingkat nasional National Folklore Festival ke-10 bersama PSUP.</p>
-          <div class="exp-tags">
-            <span>Choral Competition</span>
-            <span>Gold Medal</span>
-            <span>Performance</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="padus">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <span class="exp-type">Supervisor</span>
-          </div>
-          <h3>Badan Pengawas PADUS Universitas Pancasila</h3>
-          <p>Mengawasi dan mengevaluasi kegiatan organisasi PADUS, memastikan kegiatan berjalan sesuai AD/ART, dan memberikan rekomendasi untuk perbaikan organisasi.</p>
-          <div class="exp-tags">
-            <span>Supervision</span>
-            <span>Evaluation</span>
-            <span>Governance</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="psup">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-music"></i>
-            </div>
-            <span class="exp-type">Music Division</span>
-          </div>
-          <h3>Anggota Divisi Latihan PSUP</h3>
-          <p>Mengatur partitur musik, membantu pelatih dalam koordinasi latihan paduan suara, dan bertanggung jawab atas persiapan materi latihan serta koordinasi antar anggota.</p>
-          <div class="exp-tags">
-            <span>Music</span>
-            <span>Coordination</span>
-            <span>Leadership</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="sakka">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-home"></i>
-            </div>
-            <span class="exp-type">Management</span>
-          </div>
-          <h3>Biro Rumah Tangga SAKKA</h3>
-          <p>Mengelola logistik dan kebersihan organisasi kemahasiswaan, mengkoordinasikan acara-acara besar, dan menjaga kelancaran operasional harian organisasi.</p>
-          <div class="exp-tags">
-            <span>Logistics</span>
-            <span>Event Management</span>
-            <span>Operations</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="reminiscentia">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-guitar"></i>
-            </div>
-            <span class="exp-type">Technical & Performance</span>
-          </div>
-          <h3>Tim Teknis & Penyanyi Konser Reminiscentia</h3>
-          <p>Berperan sebagai divisi kepelatihan yang membina penyanyi sekaligus tampil sebagai performer, serta memastikan seluruh proses latihan dan konser berjalan dengan lancar.</p>
-          <div class="exp-tags">
-            <span>Sound System</span>
-            <span>Technical</span>
-            <span>Performance</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="exp-card" data-modal="baswara">
-          <div class="exp-card-header">
-            <div class="exp-icon">
-              <i class="fas fa-microphone"></i>
-            </div>
-            <span class="exp-type">Performance</span>
-          </div>
-          <h3>Penyanyi & Panitia Konser Baswara</h3>
-          <p>Tampil sebagai penyanyi paduan suara dan mengelola bagian logistik untuk kelancaran konser Baswara, memastikan semua aspek teknis berjalan dengan baik.</p>
-          <div class="exp-tags">
-            <span>Performance</span>
-            <span>Logistics</span>
-            <span>Teamwork</span>
-          </div>
-          <div class="exp-cta">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal Container -->
+  <!-- Modal Container (Styled as Win95 Dialog) -->
   <div class="modal" id="experienceModal">
     <div class="modal-overlay"></div>
-    <div class="modal-content">
-      <button class="modal-close">
-        <i class="fas fa-times"></i>
-      </button>
+    <div class="modal-content win95-window">
+      <div class="win95-title-bar">
+        <div class="win95-title"><i class="fas fa-info-circle"></i> Document Viewer</div>
+        <div class="win95-window-controls">
+          <button class="win95-ctrl-btn modal-close">X</button>
+        </div>
+      </div>
       <div class="modal-body" id="modalBody">
         <!-- Content will be dynamically inserted here -->
       </div>
     </div>
   </div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section scroll-animate">
-    <div class="contact-background">
-      <div class="contact-shape shape-1"></div>
-      <div class="contact-shape shape-2"></div>
-    </div>
-    <div class="contact-content">
-      <div class="section-header">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-description">
-          Punya project menarik atau just want to say hi? 
-          Feel free to reach out. I'm always open to discussing new opportunities!
-        </p>
+  <!-- Windows 95 Taskbar -->
+  <div class="win95-taskbar">
+    <button class="win95-start-btn" id="startBtn">
+      <div class="start-logo">
+        <i class="fab fa-windows"></i>
       </div>
-      
-      <div class="contact-info">
-        <a href="mailto:dimassp1008@gmail.com" class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Email</h4>
-            <p>dimassp1008@gmail.com</p>
-          </div>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/" class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-linkedin"></i>
-          </div>
-          <div class="contact-details">
-            <h4>LinkedIn</h4>
-            <p>Dimas Satrio Parikesit</p>
-          </div>
-        </a>
-        
-        <a href="https://www.instagram.com/dimsstr._/" class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-instagram"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Instagram</h4>
-            <p>@dimsstr._</p>
-          </div>
-        </a>
-      </div>
+      <span>Start</span>
+    </button>
+    
+    <div class="taskbar-divider"></div>
+    
+    <div class="taskbar-items">
+      <a href="#home" class="taskbar-item active" data-window="home">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="taskbar-item" data-window="about">
+        <i class="fas fa-file-alt"></i>
+        <span>About</span>
+      </a>
+      <a href="#education" class="taskbar-item" data-window="education">
+        <i class="fas fa-university"></i>
+        <span>Education</span>
+      </a>
+      <a href="#experience" class="taskbar-item" data-window="experience">
+        <i class="fas fa-folder"></i>
+        <span>Experience</span>
+      </a>
+      <a href="#contact" class="taskbar-item" data-window="contact">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
     </div>
-  </section>
+    
+    <div class="win95-system-tray win95-box-inset">
+      <i class="fas fa-volume-up tray-icon"></i>
+      <i class="fas fa-network-wired tray-icon"></i>
+      <span class="system-time" id="trayClock">12:00 PM</span>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <div class="logo">
-            <span class="logo-accent">Dimas</span>
-            <span class="logo-text">Portofolio</span>
-          </div>
-          <p>Creating digital experiences that matter.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Navigation</h4>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-          </div>
-          <div class="footer-column">
-            <h4>Connect</h4>
-            <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/">LinkedIn</a>
-            <a href="https://www.instagram.com/dimsstr._/">Instagram</a>
-            <a href="mailto:dimassp1008@gmail.com">Email</a>
-          </div>
-        </div>
+  <!-- Start Menu Popup -->
+  <div class="win95-start-menu" id="startMenu">
+    <div class="start-menu-sidebar">
+      <div class="sidebar-text">Windows<span>95</span></div>
+    </div>
+    <div class="start-menu-items">
+      <a href="#home" class="start-menu-item">
+        <i class="fas fa-home"></i>
+        <span><u>H</u>ome</span>
+      </a>
+      <a href="#about" class="start-menu-item">
+        <i class="fas fa-file-alt"></i>
+        <span><u>A</u>bout Me</span>
+      </a>
+      <a href="#education" class="start-menu-item">
+        <i class="fas fa-university"></i>
+        <span><u>E</u>ducation</span>
+      </a>
+      <a href="#experience" class="start-menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>E<u>x</u>perience</span>
+      </a>
+      <a href="#contact" class="start-menu-item">
+        <i class="fas fa-envelope"></i>
+        <span><u>C</u>ontact</span>
+      </a>
+      <div class="start-menu-divider"></div>
+      <a href="https://drive.google.com/file/d/1at9EQ16LjZSkxN8urYMkvIbkwYZawQYM/view?usp=sharing" target="_blank" class="start-menu-item">
+        <i class="fas fa-download"></i>
+        <span>Download CV</span>
+      </a>
+      <div class="start-menu-divider"></div>
+      <button class="start-menu-item shutdown-btn" id="shutdownBtn">
+        <i class="fas fa-power-off"></i>
+        <span>Sh<u>u</u>t Down...</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Shut Down Overlay -->
+  <div class="win95-shutdown-overlay" id="shutdownOverlay">
+    <div class="shutdown-message win95-box-raised">
+      <div class="shutdown-message-title win95-title-bar">
+        <div class="win95-title">Shut Down Portfolio</div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Dimas Satrio Parikesit. Crafted with <i class="fas fa-heart"></i> and coffee.</p>
+      <div class="shutdown-message-body">
+        <div class="warning-text">It is now safe to turn off your computer.</div>
+        <button class="win95-button restart-btn" id="restartBtn">Restart Portfolio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (Notepad Style!) -->
+  <footer class="win95-window">
+    <div class="win95-title-bar">
+      <div class="win95-title"><i class="far fa-file-alt"></i> System_Info.log - Notepad</div>
+      <div class="win95-window-controls">
+        <button class="win95-ctrl-btn" aria-label="Minimize">_</button>
+        <button class="win95-ctrl-btn" aria-label="Maximize">⧠</button>
+        <button class="win95-ctrl-btn" onclick="alert('Notepad log file is locked for writing!')">X</button>
+      </div>
+    </div>
+    <div class="win95-menu-bar">
+      <span><u>F</u>ile</span>
+      <span><u>E</u>dit</span>
+      <span><u>S</u>earch</span>
+      <span><u>H</u>elp</span>
+    </div>
+    <div class="win95-window-body">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="logo">
+              <div class="netscape-logo">N</div>
+              <span class="logo-accent">Dimas</span>
+              <span class="logo-text">Portofolio</span>
+            </div>
+            <p style="margin-top: 8px;">Creating digital experiences that matter.</p>
+            <div style="margin-top: 15px;">
+              <button class="win95-button" id="guestbookBtn">
+                <i class="fas fa-book-open"></i> Sign Guestbook
+              </button>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Navigation</h4>
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#education">Education</a>
+            </div>
+            <div class="footer-column">
+              <h4>Connect</h4>
+              <a href="https://www.linkedin.com/in/dimas-satrio-parikesit-22842a1a3/" target="_blank">LinkedIn</a>
+              <a href="https://www.instagram.com/dimsstr._/" target="_blank">Instagram</a>
+              <a href="mailto:dimassp1008@gmail.com">Email</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Retro Web Counters & Rings -->
+        <div class="footer-bottom">
+          <div class="retro-counter">
+            <span class="counter-label">Visitor Count:</span>
+            <div class="counter-digits win95-box-inset">
+              <span>0</span><span>0</span><span>1</span><span>4</span><span>8</span><span>9</span>
+            </div>
+          </div>
+          
+          <p>&copy; 2025 Dimas Satrio Parikesit. Crafted with <i class="fas fa-heart"></i> and coffee.</p>
+          
+          <div class="retro-badges">
+            <div class="retro-badge-item">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23000'/%3E%3Ctext x='4' y='18' fill='%2300ff00' font-family='monospace' font-size='9' font-weight='bold'%3ENETSCAPE%3C/text%3E%3Ctext x='4' y='28' fill='%23fff' font-family='monospace' font-size='8'%3ENOW! 3.0%3C/text%3E%3Crect x='64' y='3' width='20' height='25' fill='%23000080'/%3E%3Ctext x='70' y='20' fill='%23fff' font-family='sans-serif' font-weight='bold' font-size='16'%3EN%3C/text%3E%3C/svg%3E" alt="Netscape Now">
+            </div>
+            <div class="retro-badge-item">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%23000'/%3E%3Ctext x='4' y='14' fill='%23ff00ff' font-family='monospace' font-size='8' font-weight='bold'%3EHTML%3C/text%3E%3Ctext x='40' y='14' fill='%2300ffff' font-family='monospace' font-size='8'%3E3.2%3C/text%3E%3Ctext x='4' y='26' fill='%23ffff00' font-family='monospace' font-size='8'%3ECOMPLIANT%3C/text%3E%3C/svg%3E" alt="HTML 3.2 Compliant">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- Guestbook Modal (Win95 Dialog) -->
+  <div class="modal" id="guestbookModal">
+    <div class="modal-overlay"></div>
+    <div class="win95-window modal-content" style="max-width: 450px;">
+      <div class="win95-title-bar">
+        <div class="win95-title"><i class="fas fa-edit"></i> Sign Guestbook</div>
+        <div class="win95-window-controls">
+          <button class="win95-ctrl-btn" id="closeGuestbook">X</button>
+        </div>
+      </div>
+      <div class="win95-window-body">
+        <form id="guestbookForm">
+          <div class="win95-box-inset" style="padding: 10px; background: white; margin-bottom: 12px;">
+            <div style="margin-bottom: 8px;">
+              <label for="gbName" style="font-weight: bold; display: block; margin-bottom: 4px; font-size: 11px;">Name:</label>
+              <input type="text" id="gbName" required style="width: 100%; border: 1.5px solid var(--border-shadow); padding: 4px; font-family: monospace; outline: none;" class="win95-box-inset">
+            </div>
+            <div>
+              <label for="gbMsg" style="font-weight: bold; display: block; margin-bottom: 4px; font-size: 11px;">Message:</label>
+              <textarea id="gbMsg" required rows="3" style="width: 100%; border: 1.5px solid var(--border-shadow); padding: 4px; font-family: monospace; outline: none; resize: vertical;" class="win95-box-inset"></textarea>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button type="submit" class="win95-button">
+              <i class="fas fa-check"></i> Sign
+            </button>
+            <button type="button" class="win95-button" id="cancelGuestbook">
+              Cancel
+            </button>
+          </div>
+        </form>
+        <div class="win95-box-inset" style="margin-top: 15px; padding: 8px; background: #e6e6e6; max-height: 150px; overflow-y: auto;">
+          <h4 style="font-size: 11px; margin-bottom: 6px; border-bottom: 1px dashed #888; padding-bottom: 2px;">Guestbook Entries (GUESTBK.DAT)</h4>
+          <div id="guestbookEntries" style="font-size: 10px; display: flex; flex-direction: column; gap: 6px;">
+            <!-- Entries will load here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
